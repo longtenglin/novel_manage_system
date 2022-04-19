@@ -11,8 +11,8 @@ import lombok.Data;
 
 @Data
 public class Treasure {
-    private String treasureName;
-    private String treasureType;
-    private String treasureAttribute;
-    private String description;
+    String treasureName;
+    String treasureType;
+    String treasureAttribute;
+    String description;
 }

@@ -11,8 +11,8 @@ import lombok.Data;
 
 @Data
 public class Weapons {
-    private String weaponsName;
-    private String weaponsType;
-    private String weaponsAttribute;
-    private String description;
+    String weaponsName;
+    String weaponsType;
+    String weaponsAttribute;
+    String description;
 }

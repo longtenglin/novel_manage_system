@@ -12,5 +12,6 @@ import lombok.Data;
 public class Sect {
     public String sectName;
     public String sectType;
+    public String sectAttribute;
     public String description;
 }

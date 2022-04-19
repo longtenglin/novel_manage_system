@@ -11,8 +11,8 @@ import lombok.Data;
  */
 @Data
 public class Novel {
-    private String novelName;
-    private String novelType;
-    private String publishDate;
-    private String author;
+    String novelName;
+    String novelType;
+    String publishDate;
+    String author;
 }

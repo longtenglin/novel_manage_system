@@ -11,7 +11,8 @@ import lombok.Data;
 
 @Data
 public class Road {
-    private String roadName;
-    private String roadType;
-    private String description;
+    String roadName;
+    String roadType;
+    String roadAttribute;
+    String description;
 }

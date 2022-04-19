@@ -13,5 +13,6 @@ import lombok.Data;
 public class Person {
     private String personName;
     private String age;
+    private String personAttribute;
     private String description;
 }
