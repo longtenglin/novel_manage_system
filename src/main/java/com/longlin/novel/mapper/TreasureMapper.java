@@ -1,6 +1,10 @@
 package com.longlin.novel.mapper;
 
+import com.longlin.novel.entity.Treasure;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Select;
+
+import java.util.List;
 
 /**
  * @Description:
@@ -10,4 +14,6 @@ import org.apache.ibatis.annotations.Mapper;
  */
 @Mapper
 public interface TreasureMapper {
+    @Select("SELECT * FROM treasure")
+    List<Treasure> getTreasureList();
 }
