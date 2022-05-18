@@ -1,12 +1,14 @@
 package com.longlin.novel.service.impl;
 
+import com.alibaba.fastjson.JSONObject;
 import com.longlin.novel.entity.Novel;
 import com.longlin.novel.mapper.NovelMapper;
 import com.longlin.novel.service.INovelService;
-import org.apache.ibatis.annotations.Mapper;
+import com.longlin.novel.utils.ResponseUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 /**
@@ -21,11 +23,8 @@ public class NovelServiceImpl implements INovelService {
     NovelMapper novelMapper;
 
     @Override
-    public List<Novel> getNovelList() {
+    public JSONObject getNovelList() {
         List<Novel> novelList = novelMapper.getNovelList();
-        if (novelList == null || novelList.size() == 0){
-            return novelMapper.getNovelList();
-        }
-        return novelMapper.getNovelList();
+        return ResponseUtils.setResponseMessage(novelList);
     }
 }

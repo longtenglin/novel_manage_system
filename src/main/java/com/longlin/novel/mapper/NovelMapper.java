@@ -2,6 +2,7 @@ package com.longlin.novel.mapper;
 
 import com.longlin.novel.entity.Novel;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.ResultMap;
 import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
@@ -14,6 +15,6 @@ import java.util.List;
  */
 @Mapper
 public interface NovelMapper {
-    @Select("SELETC * FROM novel")
+    @Select("SELECT * FROM novel")
     List<Novel> getNovelList();
 }

@@ -1,6 +1,11 @@
 package com.longlin.novel.entity;
 
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableName;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
+
+import java.sql.Date;
 
 /**
  * Description: novel information
@@ -10,9 +15,17 @@ import lombok.Data;
  * Version: 1.0
  */
 @Data
+@TableName(value = "novel")
 public class Novel {
-    String novelName;
-    String novelType;
-    String publishDate;
-    String author;
+    private String id;
+    private String novelName;
+    private String navelType;
+    private String novelAuthor;
+    private Date novelPubDate;
+    private String novelDescription;
+    private Date createTime;
+    private String creator;
+    private Date updateTime;
+    private String updater;
+    private int deleted;
 }

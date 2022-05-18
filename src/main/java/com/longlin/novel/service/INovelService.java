@@ -1,8 +1,7 @@
 package com.longlin.novel.service;
 
-import com.longlin.novel.entity.Novel;
-
-import java.util.List;
+import com.alibaba.fastjson.JSONObject;
+import org.apache.ibatis.annotations.Mapper;
 
 /**
  * @Description:
@@ -11,5 +10,5 @@ import java.util.List;
  * @Version: 1.0
  */
 public interface INovelService {
-    List<Novel> getNovelList();
+    JSONObject getNovelList();
 }
