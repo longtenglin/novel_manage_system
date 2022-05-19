@@ -8,7 +8,6 @@ import com.longlin.novel.utils.ResponseUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.Resource;
 import java.util.List;
 
 /**
@@ -23,8 +22,17 @@ public class NovelServiceImpl implements INovelService {
     NovelMapper novelMapper;
 
     @Override
-    public JSONObject getNovelList() {
-        List<Novel> novelList = novelMapper.getNovelList();
-        return ResponseUtils.setResponseMessage(novelList);
+    public JSONObject getNovelList(JSONObject params) {
+        int total = novelMapper.getTotalNovel();
+        int pageSize = (int) params.get("pageSize");
+        int current = (int) params.get("current");
+        int start = (current -1)*pageSize;
+        List<Novel> novelList = novelMapper.getNovelList(start, pageSize);
+        JSONObject result = new JSONObject();
+        result.put("total", total);
+        result.put("pageSize", pageSize);
+        result.put("current", current);
+        result.put("dataSource", novelList);
+        return ResponseUtils.setResponseMessage(result);
     }
 }
