@@ -15,4 +15,5 @@ public class Person {
     private String age;
     private String personAttribute;
     private String description;
+    private int isDeleted;
 }

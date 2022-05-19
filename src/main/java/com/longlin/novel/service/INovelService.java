@@ -10,5 +10,5 @@ import org.apache.ibatis.annotations.Mapper;
  * @Version: 1.0
  */
 public interface INovelService {
-    JSONObject getNovelList();
+    JSONObject getNovelList(JSONObject params);
 }
