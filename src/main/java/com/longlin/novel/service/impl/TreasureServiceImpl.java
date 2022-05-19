@@ -21,6 +21,7 @@ public class TreasureServiceImpl implements ITreasureService {
 
     @Autowired
     TreasureMapper treasureMapper;
+
     @Override
     public JSONObject getTreasureList() {
         List<Treasure> treasureList = treasureMapper.getTreasureList();

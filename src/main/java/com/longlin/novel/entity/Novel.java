@@ -19,7 +19,7 @@ import java.sql.Date;
 public class Novel {
     private String id;
     private String novelName;
-    private String navelType;
+    private String novelType;
     private String novelAuthor;
     private Date novelPubDate;
     private String novelDescription;

@@ -8,9 +8,28 @@
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/826d61ac-7f52-40bf-bb24-2235490888ab.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/826d61ac-7f52-40bf-bb24-2235490888ab.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/826d61ac-7f52-40bf-bb24-2235490888ab/storage_v2/_src_/database/novel_manage_system.hnVMkw/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/826d61ac-7f52-40bf-bb24-2235490888ab/storage_v2/_src_/database/novel_manage_system.hnVMkw/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/longlin/novel/controller/NovelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/longlin/novel/controller/NovelController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/longlin/novel/controller/PersonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/longlin/novel/controller/PersonController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/longlin/novel/entity/Novel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/longlin/novel/entity/Novel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/longlin/novel/entity/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/longlin/novel/entity/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/longlin/novel/mapper/NovelMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/longlin/novel/mapper/NovelMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/longlin/novel/mapper/PersonMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/longlin/novel/mapper/PersonMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/longlin/novel/service/impl/PersonServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/longlin/novel/service/impl/PersonServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/longlin/novel/service/impl/TreasureServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/longlin/novel/service/impl/TreasureServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/longlin/novel/controller/PersonControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/com/longlin/novel/controller/PersonControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/longlin/novel/mapper/PersonMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/com/longlin/novel/mapper/PersonMapperTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/longlin/novel/service/PersonServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/com/longlin/novel/service/PersonServiceImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/longlin/novel/controller/NovelController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/longlin/novel/controller/NovelController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/longlin/novel/controller/PersonController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/longlin/novel/controller/PersonController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/longlin/novel/entity/Novel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/longlin/novel/entity/Novel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/longlin/novel/entity/Person.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/longlin/novel/entity/Person.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/longlin/novel/mapper/NovelMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/longlin/novel/mapper/NovelMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/longlin/novel/mapper/PersonMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/longlin/novel/mapper/PersonMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/longlin/novel/service/INovelService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/longlin/novel/service/INovelService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/longlin/novel/service/impl/PersonServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/longlin/novel/service/impl/PersonServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/longlin/novel/service/impl/TreasureServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/longlin/novel/service/impl/TreasureServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/longlin/novel/mapper/PersonMapperTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/longlin/novel/mapper/PersonMapperTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/longlin/novel/service/PersonServiceImplTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/longlin/novel/service/PersonServiceImplTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,26 +89,66 @@
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.standard" value="" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
-  <component name="RunManager" selected="Spring Boot.NovelManageSystemApplication">
-    <configuration name="test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.longlin.novel.service.test" />
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\idea\novel_manage_system\src\main" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.PersonControllerTest.getPersonList">
+    <configuration name="NovelControllerTest.getNovelList (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="novel_manage_system" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.longlin.novel.service.*" />
+          <option name="PATTERN" value="com.longlin.novel.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="com.longlin.novel.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.longlin.novel.controller.NovelControllerTest" />
+      <option name="METHOD_NAME" value="getNovelList" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="NovelServiceImplTest.getNovelList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="NovelControllerTest.getNovelList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="novel_manage_system" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="java.com.longlin.novel.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="java.com.longlin.novel.controller" />
+      <option name="MAIN_CLASS_NAME" value="java.com.longlin.novel.controller.NovelControllerTest" />
+      <option name="METHOD_NAME" value="getNovelList" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PersonControllerTest.getPersonList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="novel_manage_system" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.longlin.novel.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.longlin.novel.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.longlin.novel.controller.PersonControllerTest" />
+      <option name="METHOD_NAME" value="getPersonList" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PersonServiceImplTest.getPersonList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="novel_manage_system" />
       <extension name="coverage">
         <pattern>
@@ -98,8 +157,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.longlin.novel.service" />
-      <option name="MAIN_CLASS_NAME" value="com.longlin.novel.service.NovelServiceImplTest" />
-      <option name="METHOD_NAME" value="getNovelList" />
+      <option name="MAIN_CLASS_NAME" value="com.longlin.novel.service.PersonServiceImplTest" />
+      <option name="METHOD_NAME" value="getPersonList" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -119,15 +178,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.test" />
-      <item itemvalue="JUnit.NovelServiceImplTest.getNovelList" />
       <item itemvalue="Spring Boot.NovelManageSystemApplication" />
+      <item itemvalue="JUnit.NovelControllerTest.getNovelList" />
+      <item itemvalue="JUnit.PersonControllerTest.getPersonList" />
+      <item itemvalue="JUnit.NovelControllerTest.getNovelList (1)" />
+      <item itemvalue="JUnit.PersonServiceImplTest.getPersonList" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.NovelManageSystemApplication" />
-        <item itemvalue="JUnit.NovelServiceImplTest.getNovelList" />
-        <item itemvalue="Application.test" />
+        <item itemvalue="JUnit.PersonControllerTest.getPersonList" />
+        <item itemvalue="JUnit.PersonServiceImplTest.getPersonList" />
+        <item itemvalue="JUnit.NovelControllerTest.getNovelList (1)" />
+        <item itemvalue="JUnit.NovelControllerTest.getNovelList" />
       </list>
     </recent_temporary>
   </component>
@@ -161,6 +224,7 @@
       <workItem from="1651108087590" duration="1220000" />
       <workItem from="1651469682453" duration="1521000" />
       <workItem from="1652881859057" duration="2017000" />
+      <workItem from="1652960976213" duration="4749000" />
     </task>
     <servers />
   </component>

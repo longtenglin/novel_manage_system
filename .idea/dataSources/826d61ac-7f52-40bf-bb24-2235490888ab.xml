@@ -11,9 +11,9 @@
 13753||10|c|G
 13753||10|C|G
 13753||10|T|G</Grants>
-      <IntrospectionStateNumber>818</IntrospectionStateNumber>
+      <IntrospectionStateNumber>824</IntrospectionStateNumber>
       <ServerVersion>14.2</ServerVersion>
-      <StartupTime>1652883774</StartupTime>
+      <StartupTime>1652961868</StartupTime>
       <TimeZones>true ACDT
 true ACSST
 false ACST
@@ -808,7 +808,7 @@ false Zulu
 13388||10|C|G
 13388||-9223372036854775808|U|G
 13388||10|U|G</Grants>
-      <IntrospectionStateNumber>819</IntrospectionStateNumber>
+      <IntrospectionStateNumber>825</IntrospectionStateNumber>
       <ObjectId>16394</ObjectId>
       <OwnerName>novel_manage_system</OwnerName>
     </database>
@@ -4239,7 +4239,7 @@ false Zulu
     <schema id="263" parent="2" name="public">
       <Comment>standard public schema</Comment>
       <Current>1</Current>
-      <IntrospectionStateNumber>819</IntrospectionStateNumber>
+      <IntrospectionStateNumber>825</IntrospectionStateNumber>
       <ObjectId>2200</ObjectId>
       <StateNumber>527</StateNumber>
       <OwnerName>postgres</OwnerName>
@@ -4300,10 +4300,10 @@ false Zulu
       <StateNumber>777</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="273" parent="264" name="navel_type">
+    <column id="273" parent="264" name="novel_type">
       <DataType>varchar(64)|0s</DataType>
       <Position>3</Position>
-      <StateNumber>777</StateNumber>
+      <StateNumber>822</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="274" parent="264" name="novel_author">

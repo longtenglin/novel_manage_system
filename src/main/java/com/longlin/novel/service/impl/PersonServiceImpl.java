@@ -43,6 +43,7 @@ public class PersonServiceImpl implements IPersonService {
             result.put("pageSize", pageSize);
             result.put("current", current);
             result.put("dataSource", personList);
+
             log.info(this.getClass().getName()+" - 人物信息获取业务处理结束");
             return ResponseUtils.setResponseMessage(result);
         }catch (Exception e){

@@ -16,9 +16,9 @@ import java.util.Map;
 @Mapper
 public interface PersonMapper {
 
-    @Select("SELECT * FROM person WHERE is_deleted = 0 ORDER BY id ASC OFFSET #{param1} LIMIT #{param2}")
+    @Select("SELECT * FROM person WHERE deleted = 0 ORDER BY id ASC OFFSET #{param1} LIMIT #{param2}")
     List<Person> getPersonList(int start, int pageSize);
 
-    @Select("SELECT COUNT(id) FROM person WHERE is_deleted = 0")
+    @Select("SELECT COUNT(id) FROM person WHERE deleted = 0")
     int getTotalPerson();
 }

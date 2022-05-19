@@ -1,5 +1,6 @@
 package com.longlin.novel.mapper;
 
+import com.longlin.novel.mapper.PersonMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

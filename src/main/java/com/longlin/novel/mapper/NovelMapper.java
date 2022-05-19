@@ -15,9 +15,9 @@ import java.util.List;
  */
 @Mapper
 public interface NovelMapper {
-    @Select("SELECT * FROM novel WHERE is_deleted = 0 ORDER BY ASC OFFSET #{param1} LIMIT #{param2}")
+    @Select("SELECT * FROM novel WHERE deleted = 0 ORDER BY id ASC OFFSET #{param1} LIMIT #{param2}")
     List<Novel> getNovelList(int start, int pageSize);
 
-    @Select("SELECT count(id) FROM novel WHERE is_deleted = 0")
+    @Select("SELECT count(id) FROM novel WHERE deleted = 0")
     int getTotalNovel();
 }
