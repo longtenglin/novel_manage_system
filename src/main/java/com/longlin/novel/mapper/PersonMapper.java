@@ -5,6 +5,7 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @Description:
@@ -14,6 +15,4 @@ import java.util.List;
  */
 @Mapper
 public interface PersonMapper {
-    @Select("SELECT * FROM person")
-    List<Person> getPersonList();
 }
