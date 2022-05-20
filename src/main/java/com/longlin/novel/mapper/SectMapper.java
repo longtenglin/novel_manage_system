@@ -14,6 +14,9 @@ import java.util.List;
  */
 @Mapper
 public interface SectMapper {
-    @Select("SELECT * FROM sect")
-    List<Sect> getSectList();
+    @Select("SELECT * FROM sect WHERE deleted = 0 ORDER BY id ASE OFFSET #{offset} LIMIT #{limit}")
+    List<Sect> getSectList(int offset, int limit);
+
+    @Select("SELECT COUNT(id) FROM sect WHERE deleted = 0")
+    int getTotalSect();
 }

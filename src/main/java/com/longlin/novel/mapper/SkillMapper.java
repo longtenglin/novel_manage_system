@@ -14,6 +14,9 @@ import java.util.List;
  */
 @Mapper
 public interface SkillMapper {
-    @Select("SELECT * FROM skill")
-    List<Skill> getSkillList();
+    @Select("SELECT * FROM skill WHERE deleted = 0 ORDER BY id ASE OFFSET #{param1} LIMIT #{param2}")
+    List<Skill> getSkillList(int offset, int limit);
+
+    @Select("SELECT COUNT(id) FROM sect WHERE id = 0")
+    int getTotalSkill();
 }

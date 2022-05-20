@@ -22,8 +22,19 @@ public class RoadServiceImpl implements IRoadService {
     @Autowired
     RoadMapper roadMapper;
     @Override
-    public JSONObject getRoadList() {
-        List<Road> roadList = roadMapper.getRoadList();
-        return ResponseUtils.setResponseMessage(roadList);
+    public JSONObject getRoadList(JSONObject params) {
+        JSONObject result = new JSONObject();
+        int current = (int) params.get("current");
+        int pageSize = (int) params.get("pageSize");
+        int start = (current -1 )*pageSize;
+
+        int total = roadMapper.getTotalRoad();
+        List<Road> roadList = roadMapper.getRoadList(start, pageSize);
+
+        result.put("total", total);
+        result.put("current", current);
+        result.put("pageSize", pageSize);
+        result.put("dataSource", roadList);
+        return result;
     }
 }

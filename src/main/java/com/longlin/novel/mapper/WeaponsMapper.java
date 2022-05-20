@@ -14,6 +14,9 @@ import java.util.List;
  */
 @Mapper
 public interface WeaponsMapper {
-    @Select("SELECT * FROM weapons")
-    List<Weapons> getWeaponsList();
+    @Select("SELECT * FROM weapons WHERE deleted = 0 ORDER BY id ASE OFFSET #{param1} LIMIT #{param2}")
+    List<Weapons> getWeaponsList(int offset, int limit);
+
+    @Select("SELECT COUNT(id) FROM weapons")
+    int getTotalWeapons();
 }

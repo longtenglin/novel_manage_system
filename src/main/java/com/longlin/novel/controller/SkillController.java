@@ -2,9 +2,11 @@ package com.longlin.novel.controller;
 
 import com.alibaba.fastjson.JSONObject;
 import com.longlin.novel.service.ISkillService;
+import com.longlin.novel.utils.ResponseUtils;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -23,10 +25,13 @@ public class SkillController {
     ISkillService iSkillService;
 
     @PostMapping("getSkillList")
-    public JSONObject getSkillList(){
-        log.info(this.getClass().getName()+ " - Skill信息获取逻辑处理开始");
-        JSONObject response = iSkillService.getSkillList();
-        log.info(this.getClass().getName()+ " - Skill信息获取逻辑处理结束");
-        return response;
+    public JSONObject getSkillList(@RequestBody JSONObject params){
+        log.info(this.getClass().getName()+ " - 获取Skill信息控制层处理开始");
+        int current = (int) params.get("current");
+        int pageSize = (int) params.get("pageSize");
+        int offset = (current - 1)*pageSize;
+        JSONObject result = iSkillService.getSkillList(offset, pageSize);
+        log.info(this.getClass().getName()+ " - 获取Skill信息控制层处理结束");
+        return ResponseUtils.setResponseMessage(result);
     }
 }

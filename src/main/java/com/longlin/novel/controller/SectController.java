@@ -5,6 +5,7 @@ import com.longlin.novel.service.ISectService;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -23,9 +24,9 @@ public class SectController {
     ISectService iSectService;
 
     @PostMapping("getSectList")
-    public JSONObject getSectList(){
+    public JSONObject getSectList(@RequestBody JSONObject params){
         log.info(this.getClass().getName()+" - Sect信息获取逻辑处理开始");
-        JSONObject response = iSectService.getSectList();
+        JSONObject response = iSectService.getSectList(params);
         log.info(this.getClass().getName()+ " - Sect信息获取逻辑处理结束");
         return response;
     }

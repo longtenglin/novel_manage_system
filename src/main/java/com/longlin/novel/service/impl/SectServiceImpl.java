@@ -22,8 +22,18 @@ public class SectServiceImpl implements ISectService {
     @Autowired
     SectMapper sectMapper;
     @Override
-    public JSONObject getSectList() {
-        List<Sect> sectList = sectMapper.getSectList();
-        return ResponseUtils.setResponseMessage(sectList);
+    public JSONObject getSectList(JSONObject params) {
+        JSONObject result = new JSONObject();
+        int current = (int) params.get("current");
+        int pageSize = (int) params.get("pageSize");
+        int offset = (current - 1)*pageSize;
+        int total = sectMapper.getTotalSect();
+        List<Sect> sectList = sectMapper.getSectList(offset, pageSize);
+
+        result.put("total", total);
+        result.put("current", current);
+        result.put("pageSize", pageSize);
+        result.put("dataSource", sectList);
+        return result;
     }
 }
