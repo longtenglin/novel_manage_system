@@ -1,0 +1,5 @@
+# 忽略.idea文件夹及其下面文件
+.idea
+
+# 忽略 target 编译文件
+target
