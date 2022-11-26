@@ -14,6 +14,9 @@ import java.util.List;
  */
 @Mapper
 public interface TreasureMapper {
-    @Select("SELECT * FROM treasure")
-    List<Treasure> getTreasureList();
+    @Select("SELECT * FROM treasure WHERE deleted = 0 ORDER BY id ASE OFFSET #{param1} LIMIT #{param2}")
+    List<Treasure> getTreasureList(int offset, int limit);
+
+    @Select("SELECT COUNT(id) FROM treasure WHERE deleted = 0")
+    int getTotalTreasure();
 }

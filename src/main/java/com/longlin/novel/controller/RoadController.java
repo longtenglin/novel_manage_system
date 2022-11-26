@@ -2,9 +2,11 @@ package com.longlin.novel.controller;
 
 import com.alibaba.fastjson.JSONObject;
 import com.longlin.novel.service.IRoadService;
+import com.longlin.novel.utils.ResponseUtils;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -23,10 +25,10 @@ public class RoadController {
     IRoadService iRoadService;
 
     @PostMapping("getRoadList")
-    public JSONObject getRoadList(){
+    public JSONObject getRoadList(@RequestBody JSONObject params){
         log.info(this.getClass().getName()+" - road信息获取逻辑处理开始");
-        JSONObject response = iRoadService.getRoadList();
+        JSONObject result = iRoadService.getRoadList(params);
         log.info(this.getClass().getName()+" - road信息获取逻辑处理结束");
-        return response;
+        return ResponseUtils.setResponseMessage(result);
     }
 }

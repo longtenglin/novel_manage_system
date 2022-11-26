@@ -9,5 +9,5 @@ import com.alibaba.fastjson.JSONObject;
  * @Version: 1.0
  */
 public interface IRoadService {
-    JSONObject getRoadList();
+    JSONObject getRoadList(JSONObject params);
 }

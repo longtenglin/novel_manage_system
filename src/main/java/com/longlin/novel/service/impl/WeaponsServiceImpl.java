@@ -1,5 +1,6 @@
 package com.longlin.novel.service.impl;
 
+import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.longlin.novel.entity.Weapons;
 import com.longlin.novel.mapper.WeaponsMapper;
@@ -22,8 +23,13 @@ public class WeaponsServiceImpl implements IWeaponsService {
     @Autowired
     WeaponsMapper weaponsMapper;
     @Override
-    public JSONObject getWeaponsList() {
-        List<Weapons> weaponsList = weaponsMapper.getWeaponsList();
-        return ResponseUtils.setResponseMessage(weaponsList);
+    public JSONObject getWeaponsList(int offset, int limit) {
+        JSONObject result = new JSONObject();
+        int total = weaponsMapper.getTotalWeapons();
+        List<Weapons> weaponsList = weaponsMapper.getWeaponsList(offset, limit);
+
+        result.put("total", total);
+        result.put("dataSource", weaponsList);
+        return result;
     }
 }

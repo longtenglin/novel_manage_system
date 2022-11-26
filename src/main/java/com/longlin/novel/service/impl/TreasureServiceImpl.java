@@ -23,8 +23,12 @@ public class TreasureServiceImpl implements ITreasureService {
     TreasureMapper treasureMapper;
 
     @Override
-    public JSONObject getTreasureList() {
-        List<Treasure> treasureList = treasureMapper.getTreasureList();
-        return ResponseUtils.setResponseMessage(treasureList);
+    public JSONObject getTreasureList(int offset, int limit) {
+        JSONObject result = new JSONObject();
+        int total = treasureMapper.getTotalTreasure();
+        List<Treasure> treasureList = treasureMapper.getTreasureList(offset, limit);
+        result.put("total", total);
+        result.put("dataSource", treasureList);
+        return result;
     }
 }

@@ -9,8 +9,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Map;
-
 /**
  * @Description:
  * @Datetime: 2022-04-19 16:13
@@ -22,6 +20,7 @@ import java.util.Map;
 @RequestMapping("web/person")
 @Log4j2
 public class PersonController {
+
     @Autowired
     IPersonService iPersonService;
 

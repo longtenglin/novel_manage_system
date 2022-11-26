@@ -14,6 +14,9 @@ import java.util.List;
  */
 @Mapper
 public interface RoadMapper {
-    @Select("SELECT * FROM road")
-    List<Road> getRoadList();
+    @Select("SELECT * FROM road WHERE deleted = 0 ORDER BY id ASE OFFSET #{params1} LIMIT #{params}")
+    List<Road> getRoadList(int offset, int limit);
+
+    @Select("SELECT COUNT(id) FROM road WHERE deleted = 0")
+    int getTotalRoad();
 }
