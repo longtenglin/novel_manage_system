@@ -34,14 +34,32 @@ public interface PersonMapper {
             "           updater, " +
             "       )" +
             "   VALUES" +
-            "       (   #{person_name}," +
+            "       (   #{personName}," +
             "           #{age}, " +
-            "           #{person_attribute}, " +
-            "           #{person_description}, " +
+            "           #{personAttribute}, " +
+            "           #{personDescription}, " +
             "           now() , " +
             "           #{creator}, " +
             "           now(), " +
             "           #{updater}" +
             "       )")
     void insertPerson(JSONObject params);
+
+    @Update("UPDATE person " +
+            "   SET person_name = #{personName} " +
+            "   SET age = #{age} " +
+            "   SET person_attribute = #{personAttribute} " +
+            "   SET person_description = #{personDescription} " +
+            "   SET update_time = now() " +
+            "   SET updater = #{updater} " +
+            "WHERE id = #{id}")
+    void updatePerson(JSONObject params);
+
+    @Update("UPDATE person" +
+            "   SET deleted = 1 " +
+            "WHERE id = #{id}")
+    void deletedPersonFalse(JSONObject params);
+
+    @Delete("DELETE person WHERE id = #{id}")
+    void deletedPerson(JSONObject params);
 }
