@@ -1,8 +1,8 @@
 package com.longlin.novel.mapper;
 
+import com.alibaba.fastjson.JSONObject;
 import com.longlin.novel.entity.Person;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 import java.util.Map;
@@ -21,4 +21,27 @@ public interface PersonMapper {
 
     @Select("SELECT COUNT(id) FROM person WHERE deleted = 0")
     int getTotalPerson();
+
+    @Insert("INSERT INTO " +
+            "   person " +
+            "       (   person_name, " +
+            "           age, " +
+            "           person_attribute, " +
+            "           person_description, " +
+            "           create_time, " +
+            "           creator, " +
+            "           update_time, " +
+            "           updater, " +
+            "       )" +
+            "   VALUES" +
+            "       (   #{person_name}," +
+            "           #{age}, " +
+            "           #{person_attribute}, " +
+            "           #{person_description}, " +
+            "           now() , " +
+            "           #{creator}, " +
+            "           now(), " +
+            "           #{updater}" +
+            "       )")
+    void insertPerson(JSONObject params);
 }
