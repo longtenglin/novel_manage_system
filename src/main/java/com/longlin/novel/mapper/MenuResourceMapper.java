@@ -28,7 +28,8 @@ public interface MenuResourceMapper {
             , @Result(column = "hide_in_menu", property = "hideInMenu", jdbcType = JdbcType.INTEGER)
     })
     @Select("<script>" +
-            "   SELECT * FROM menu_resource" +
+            "   SELECT * " +
+            "   FROM menu_resource" +
             "   WHERE deleted = 0" +
             "   ORDER BY order_index AES" +
             "</script>")
@@ -50,34 +51,35 @@ public interface MenuResourceMapper {
             "       updater," +
             "       hide_in_menu)" +
             "   VALUES(" +
-            "       #{resource_name}," +
-            "       #{resource_type}, " +
-            "       #{order_index}, " +
-            "       #{menu_path}, " +
-            "       #{menu_icon}, " +
-            "       #{menu_name}, " +
-            "       #{parent_index}, " +
-            "       #{operation_rule}, " +
-            "       #{create_time}, " +
-            "       #{create_by}, " +
-            "       #{update_time}, " +
+            "       #{resourceName}," +
+            "       #{resourceType}, " +
+            "       #{orderIndex}, " +
+            "       #{menuPath}, " +
+            "       #{menuIcon}, " +
+            "       #{menuName}, " +
+            "       #{parentIndex}, " +
+            "       #{operationRule}, " +
+            "       #{createTime}, " +
+            "       #{createBy}, " +
+            "       #{updateTime}, " +
             "       #{updater}, " +
-            "       #{hide_in_menu})")
+            "       #{hideInMenu})")
     void insertMenuResource(JSONObject params);
 
     @Update("UPDATE " +
             "   menu_resource " +
             "SET " +
-            "   resource_name = #{resource_name}, " +
-            "   resource_type = #{resource_type}, " +
-            "   order_index = #{order_index}, " +
-            "   menu_path = #{menu_path}, " +
-            "   menu_icon = #{menu_icon}, " +
-            "   menu_name = #{menu_name}, " +
-            "   parent_index = #{parent_index}, " +
-            "   operation_rule = #{operation_rule}, " +
+            "   resource_name = #{resourceName}, " +
+            "   resource_type = #{resourceType}, " +
+            "   order_index = #{orderIndex}, " +
+            "   menu_path = #{menuPath}, " +
+            "   menu_icon = #{menuIcon}, " +
+            "   menu_name = #{menuName}, " +
+            "   parent_index = #{parentIndex}, " +
+            "   operation_rule = #{operationRule}, " +
             "   update_time = now(), " +
             "   updater = #{updater}, " +
-            "   hide_in_menu = #{hide_in_menu}")
+            "   hide_in_menu = #{hideInMenu} " +
+            "WHERE resource_id = #{resourceId}")
     void updateMenuResource(JSONObject params);
 }

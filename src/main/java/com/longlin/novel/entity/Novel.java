@@ -4,7 +4,9 @@ import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
+import java.io.Serializable;
 import java.sql.Date;
 
 /**
@@ -14,18 +16,14 @@ import java.sql.Date;
  * Author: Mr.ZhaoNan
  * Version: 1.0
  */
+@EqualsAndHashCode(callSuper = true)
 @Data
 @TableName(value = "novel")
-public class Novel {
+public class Novel extends BaseEntity{
     private String id;
     private String novelName;
     private String novelType;
     private String novelAuthor;
     private Date novelPubDate;
     private String novelDescription;
-    private Date createTime;
-    private String creator;
-    private Date updateTime;
-    private String updater;
-    private int deleted;
 }
