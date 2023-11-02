@@ -2,12 +2,11 @@ package com.longlin.novel.controller;
 
 import com.alibaba.fastjson.JSONObject;
 import com.longlin.novel.service.INovelService;
-import lombok.extern.log4j.Log4j2;
+import com.longlin.novel.service.impl.NovelServiceImpl;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @Description:
@@ -17,17 +16,25 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/web/novel")
-@Log4j2
+@Slf4j
 public class NovelController {
 
     @Autowired
-    INovelService iNovelService;
+    private INovelService iNovelService;
 
-    @PostMapping("/getNovelList")
-    public JSONObject getNovelList(@RequestBody JSONObject params){
+    @GetMapping("list")
+    public JSONObject list(@RequestBody JSONObject params){
        log.info(this.getClass().getName()+" - novel信息获取逻辑处理开始");
-       JSONObject response = iNovelService.getNovelList(params);
+       JSONObject response = iNovelService.list(params);
        log.info(this.getClass().getName()+" - novel信息获取逻辑处理结束");
        return response;
+    }
+
+    @PostMapping("save")
+    public JSONObject save(@RequestBody JSONObject params) {
+        log.info(this.getClass().getName() + " - novel信息新增逻辑处理开始");
+        JSONObject response = iNovelService.save(params);
+        log.info(this.getClass().getName() + " - novel信息新增逻辑处理结束");
+        return response;
     }
 }

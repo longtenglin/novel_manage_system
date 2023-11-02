@@ -1,7 +1,6 @@
 create table if not exists novel
 (
-    id                varchar(16) default (('LTL'::text || 'N'::text) ||
-                                           to_char(nextval('sequence_novel_id'::regclass), 'FM00000'::text)) not null,
+    id                varchar(16)                                                                            not null,
     novel_name        varchar(64)                                                                            not null,
     novel_type        varchar(64)                                                                            not null,
     novel_description varchar(2048),
@@ -23,4 +22,3 @@ alter table novel
 
 create unique index if not exists novel_id_uindex
     on novel (id);
-

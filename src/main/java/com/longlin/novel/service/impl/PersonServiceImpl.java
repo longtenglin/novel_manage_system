@@ -5,7 +5,7 @@ import com.longlin.novel.entity.Person;
 import com.longlin.novel.mapper.PersonMapper;
 import com.longlin.novel.service.IPersonService;
 import com.longlin.novel.utils.ResponseUtils;
-import lombok.extern.log4j.Log4j2;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,7 +17,7 @@ import java.util.List;
  * @Version: 1.0
  */
 @Service
-@Log4j2
+@Slf4j
 public class PersonServiceImpl implements IPersonService {
 
     @Autowired

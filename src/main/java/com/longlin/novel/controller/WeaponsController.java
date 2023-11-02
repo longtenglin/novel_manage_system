@@ -3,7 +3,8 @@ package com.longlin.novel.controller;
 import com.alibaba.fastjson.JSONObject;
 import com.longlin.novel.service.IWeaponsService;
 import com.longlin.novel.utils.ResponseUtils;
-import lombok.extern.log4j.Log4j2;
+import lombok.extern.slf4j.Slf4j;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -17,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @Version: 1.0
  */
 @RestController
-@Log4j2
+@Slf4j
 @RequestMapping("web/Weapons")
 public class WeaponsController {
 

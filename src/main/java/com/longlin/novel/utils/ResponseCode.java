@@ -13,4 +13,8 @@ import org.springframework.context.annotation.Configuration;
 public class ResponseCode {
     public static String E1000 = "E1000";
     public static String E0000 = "E0000";
+
+    public static String E9999 = "E9999";
+
+    public static String E1001 = "E1001";
 }
