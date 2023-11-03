@@ -15,8 +15,8 @@ import java.util.List;
 public class ResponseUtils {
     public static JSONObject setResponseMessage(Object object){
         JSONObject jsonObject = new JSONObject();
-        jsonObject.put("code", ResponseCode.E1000);
-        jsonObject.put("message", ResponseMessage.E1000);
+        jsonObject.put("code", ResponseCode.E0000);
+        jsonObject.put("message", ResponseMessage.E0000);
         jsonObject.put("result", object);
         return jsonObject;
     }

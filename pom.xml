@@ -89,7 +89,7 @@
                             <backend>html</backend>
                             <doctype>book</doctype>
                             <attributes>
-                                <snippets>${project.build.directory}/snippets</snippets>
+                                <snippets>${project.build.directory}/generated-snippets</snippets>
                             </attributes>
                         </configuration>
                     </execution>

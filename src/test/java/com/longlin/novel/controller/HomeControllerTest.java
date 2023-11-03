@@ -20,7 +20,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  * @Version: 1.0.0
  */
 @WebMvcTest(HomeController.class)
-@AutoConfigureRestDocs(outputDir = "target/snippets")
+@AutoConfigureRestDocs
 public class HomeControllerTest {
 
     @Autowired

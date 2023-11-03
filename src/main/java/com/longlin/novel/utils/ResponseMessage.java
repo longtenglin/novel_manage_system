@@ -9,8 +9,8 @@ import org.springframework.context.annotation.Configuration;
  * @Version: 1.0
  */
 public class ResponseMessage {
-    public static String E1000 = "请求成功";
-    public static String E0000 = "请求失败";
+    public static String E1000 = "请求失败";
+    public static String E0000 = "请求成功";
 
     public static String E9999 = "程序异常";
 }

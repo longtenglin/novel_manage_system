@@ -1,6 +1,7 @@
 package com.longlin.novel.mapper;
 
 import com.alibaba.fastjson.JSONObject;
+import com.baomidou.mybatisplus.extension.service.IService;
 import com.longlin.novel.entity.Person;
 import org.apache.ibatis.annotations.*;
 
@@ -14,7 +15,7 @@ import java.util.Map;
  * @Version: 1.0
  */
 @Mapper
-public interface PersonMapper {
+public interface PersonMapper extends IService<Person> {
 
     @Select("SELECT * FROM person WHERE deleted = 0 ORDER BY id ASC OFFSET #{param1} LIMIT #{param2}")
     List<Person> getPersonList(int start, int pageSize);

@@ -10,11 +10,12 @@ import org.apache.ibatis.annotations.Mapper;
  * @Version: 1.0
  */
 public interface INovelService {
+
     JSONObject list(JSONObject params);
 
-    JSONObject save(JSONObject params);
+    int save(JSONObject params);
 
-    JSONObject update(JSONObject params);
+    int update(JSONObject params);
 
-    JSONObject delete(JSONObject params);
+    int deleteFalse(JSONObject params);
 }

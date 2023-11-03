@@ -1,0 +1,26 @@
+= Getting Started With Spring REST Docs
+
+== Novel API
+
+=== /web/novel/save
+This is an example output for a service at http://localhost:8080/save:
+
+.request
+include::{snippets}/novel/save/http-request.adoc[]
+.response
+include::{snippets}/novel/save/http-response.adoc[]
+.response params
+include::{snippets}/novel/save/response-fields.adoc[]
+
+
+=== /web/novel/list
+This is an example output for a service at http://localhost:8080/list:
+
+.request
+include::{snippets}/novel/list/http-request.adoc[]
+.request params
+include::{snippets}/novel/list/request-fields.adoc[]
+.response
+include::{snippets}/novel/list/http-response.adoc[]
+.response params
+include::{snippets}/novel/list/response-fields.adoc[]

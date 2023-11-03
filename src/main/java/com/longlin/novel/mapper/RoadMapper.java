@@ -1,5 +1,6 @@
 package com.longlin.novel.mapper;
 
+import com.baomidou.mybatisplus.extension.service.IService;
 import com.longlin.novel.entity.Road;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
@@ -13,7 +14,7 @@ import java.util.List;
  * @Version: 1.0
  */
 @Mapper
-public interface RoadMapper {
+public interface RoadMapper extends IService<Road> {
     @Select("SELECT * FROM road WHERE deleted = 0 ORDER BY id ASE OFFSET #{params1} LIMIT #{params}")
     List<Road> getRoadList(int offset, int limit);
 

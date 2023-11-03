@@ -1,5 +1,6 @@
 package com.longlin.novel.mapper;
 
+import com.baomidou.mybatisplus.extension.service.IService;
 import com.longlin.novel.entity.Weapons;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
@@ -13,7 +14,7 @@ import java.util.List;
  * @Version: 1.0
  */
 @Mapper
-public interface WeaponsMapper {
+public interface WeaponsMapper extends IService<Weapons> {
     @Select("SELECT * FROM weapons WHERE deleted = 0 ORDER BY id ASE OFFSET #{param1} LIMIT #{param2}")
     List<Weapons> getWeaponsList(int offset, int limit);
 

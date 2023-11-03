@@ -1,6 +1,7 @@
 package com.longlin.novel.mapper;
 
 import com.alibaba.fastjson.JSONObject;
+import com.baomidou.mybatisplus.extension.service.IService;
 import com.longlin.novel.entity.MenuResource;
 import org.apache.ibatis.annotations.*;
 import org.apache.ibatis.type.JdbcType;
@@ -8,7 +9,7 @@ import org.apache.ibatis.type.JdbcType;
 import java.util.List;
 
 @Mapper
-public interface MenuResourceMapper {
+public interface MenuResourceMapper extends IService<MenuResource> {
 
     @Results(id = "menuResourceMap", value = {
             @Result(column = "resource_id", property = "resourceId", jdbcType = JdbcType.INTEGER, id = true)
