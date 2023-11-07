@@ -1,19 +1,8 @@
-= Getting Started With Spring REST Docs
+= NOVEL MANAGE SYSTEM REST API DOCS
 
 == Novel API
 
-=== /web/novel/save
-This is an example output for a service at http://localhost:8080/save:
-
-.request
-include::{snippets}/novel/save/http-request.adoc[]
-.response
-include::{snippets}/novel/save/http-response.adoc[]
-.response params
-include::{snippets}/novel/save/response-fields.adoc[]
-
-
-=== /web/novel/list
+=== `GET /web/novel/list`
 This is an example output for a service at http://localhost:8080/list:
 
 .request
@@ -24,3 +13,97 @@ include::{snippets}/novel/list/request-fields.adoc[]
 include::{snippets}/novel/list/http-response.adoc[]
 .response params
 include::{snippets}/novel/list/response-fields.adoc[]
+
+=== `POST /web/novel/save`
+This is an example output for a service at http://localhost:8080/save:
+
+.request
+include::{snippets}/novel/save/http-request.adoc[]
+.response
+include::{snippets}/novel/save/http-response.adoc[]
+.response params
+include::{snippets}/novel/save/response-fields.adoc[]
+
+=== `POST /web/novel/update`
+This is an example output for a service at http://localhost:8080/update:
+
+.request
+include::{snippets}/novel/update/http-request.adoc[]
+.request params
+include::{snippets}/novel/update/request-fields.adoc[]
+.response
+include::{snippets}/novel/update/http-response.adoc[]
+.response params
+include::{snippets}/novel/update/response-fields.adoc[]
+
+=== `POST /web/novel/delete`
+This is an example output for a service at http://localhost:8080/delete:
+
+.request
+include::{snippets}/novel/delete/http-request.adoc[]
+.request params
+include::{snippets}/novel/delete/request-fields.adoc[]
+.response
+include::{snippets}/novel/delete/http-response.adoc[]
+.response params
+include::{snippets}/novel/delete/response-fields.adoc[]
+
+== Person API
+
+=== `GET /web/person/list`
+This is an example output for a service at http://localhost:8080/list:
+
+.request
+include::{snippets}/person/list/http-request.adoc[]
+.request params
+include::{snippets}/person/list/request-fields.adoc[]
+.response
+include::{snippets}/person/list/http-response.adoc[]
+.response params
+include::{snippets}/person/list/response-fields.adoc[]
+
+=== `POST /web/person/save`
+This is an example output for a service at http://localhost:8080/save:
+
+.request
+include::{snippets}/person/save/http-request.adoc[]
+.response
+include::{snippets}/person/save/http-response.adoc[]
+.response params
+include::{snippets}/person/save/response-fields.adoc[]
+
+=== `POST /web/person/update`
+This is an example output for a service at http://localhost:8080/update:
+
+.request
+include::{snippets}/person/update/http-request.adoc[]
+.request params
+include::{snippets}/person/update/request-fields.adoc[]
+.response
+include::{snippets}/person/update/http-response.adoc[]
+.response params
+include::{snippets}/person/update/response-fields.adoc[]
+
+=== `POST /web/person/delete`
+将标识数据删除字段的标识符设置为删除。即 `deleted` 由 `0` 设置为 `1`:
+
+.request
+include::{snippets}/person/deleteFalse/http-request.adoc[]
+.request params
+include::{snippets}/person/deleteFalse/request-fields.adoc[]
+.response
+include::{snippets}/person/deleteFalse/http-response.adoc[]
+.response params
+include::{snippets}/person/deleteFalse/response-fields.adoc[]
+
+=== `DELETE /web/person/delete`
+将该数据从数据库中完全删除:
+
+.request
+include::{snippets}/person/deleteTrue/http-request.adoc[]
+.request params
+include::{snippets}/person/deleteTrue/request-fields.adoc[]
+.response
+include::{snippets}/person/deleteTrue/http-response.adoc[]
+.response params
+include::{snippets}/person/deleteTrue/response-fields.adoc[]

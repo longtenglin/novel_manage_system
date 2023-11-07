@@ -13,9 +13,9 @@ public interface INovelService {
 
     JSONObject list(JSONObject params);
 
-    int save(JSONObject params);
+    JSONObject save(JSONObject params);
 
-    int update(JSONObject params);
+    JSONObject update(JSONObject params);
 
-    int deleteFalse(JSONObject params);
+    JSONObject deleteFalse(JSONObject params);
 }

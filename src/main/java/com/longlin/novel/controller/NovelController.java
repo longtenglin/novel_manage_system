@@ -2,11 +2,9 @@ package com.longlin.novel.controller;
 
 import com.alibaba.fastjson.JSONObject;
 import com.longlin.novel.service.INovelService;
-import com.longlin.novel.service.impl.NovelServiceImpl;
 import com.longlin.novel.utils.ResponseUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -34,7 +32,7 @@ public class NovelController {
     @PostMapping("save")
     public JSONObject save(@RequestBody JSONObject params) {
         log.info(this.getClass().getName() + " - novel信息新增逻辑处理开始");
-        int response = iNovelService.save(params);
+        JSONObject response = iNovelService.save(params);
         log.info(this.getClass().getName() + " - novel信息新增逻辑处理结束");
         return ResponseUtils.setResponseMessage(response);
     }
@@ -42,7 +40,7 @@ public class NovelController {
     @PostMapping("update")
     public JSONObject update(@RequestBody JSONObject params) {
         log.info(this.getClass().getName() + " - Novel信息更新逻辑处理开始");
-        int response = iNovelService.update(params);
+        JSONObject response = iNovelService.update(params);
         log.info(this.getClass().getName() + " - Novel信息更新逻辑处理结束");
         return ResponseUtils.setResponseMessage(response);
     }
@@ -50,7 +48,7 @@ public class NovelController {
     @DeleteMapping("delete")
     public JSONObject delete(@RequestBody JSONObject params) {
         log.info(this.getClass().getName() + "- Novel信息删除逻辑开始");
-        int response = iNovelService.deleteFalse(params);
+        JSONObject response = iNovelService.deleteFalse(params);
         log.info(this.getClass().getName() + "- Novel信息删除逻辑结束");
         return ResponseUtils.setResponseMessage(response);
     }

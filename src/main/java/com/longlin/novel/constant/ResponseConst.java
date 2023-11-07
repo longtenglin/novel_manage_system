@@ -18,4 +18,7 @@ public interface ResponseConst {
     public static final String RESULT_PAGE_SIZE = "result.pageSize";
     public static final String RESULT_CURRENT = "result.current";
     public static final String RESULT_SOURCE = "result.source";
+    public static final String RESULT_COUNT = "result.count";
+    public static final String SUCCESS = "success";
+    public static final String FAIL = "fail";
 }

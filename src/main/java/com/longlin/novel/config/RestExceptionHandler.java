@@ -1,4 +1,4 @@
-package hkpf.fnb.config;
+package com.longlin.novel.config;
 
 import com.longlin.novel.exception.MissingParamsException;
 import com.longlin.novel.exception.NMSException;

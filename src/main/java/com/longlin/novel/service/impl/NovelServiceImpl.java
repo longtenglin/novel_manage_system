@@ -45,26 +45,35 @@ public class NovelServiceImpl implements INovelService {
     }
 
     @Override
-    public int save(JSONObject params) {
+    public JSONObject save(JSONObject params) {
         log.info(this.getClass().getName() + " - Novel信息添加业务处理开始");
         int count = novelMapper.insertNovel(params);
+        JSONObject result = new JSONObject() {{
+            put("count", count);
+        }};
         log.info(this.getClass().getName() + " - Novel信息添加业务处理结束");
-        return count;
+        return result;
     }
 
     @Override
-    public int update(JSONObject params) {
+    public JSONObject update(JSONObject params) {
         log.info(this.getClass().getName() + " - Novel信息更新业务处理开始");
         int count = novelMapper.updateNovelById(params);
+        JSONObject result = new JSONObject() {{
+            put("count", count);
+        }};
         log.info(this.getClass().getName() + " - Novel信息更新业务处理结束");
-        return count;
+        return result;
     }
 
     @Override
-    public int deleteFalse(JSONObject params) {
+    public JSONObject deleteFalse(JSONObject params) {
         log.info(this.getClass().getName() + " - Novel信息更新业务处理开始");
         int count = novelMapper.deleteForFlag(params);
+        JSONObject result = new JSONObject() {{
+            put("count", count);
+        }};
         log.info(this.getClass().getName() + " - Novel信息更新业务处理结束");
-        return count;
+        return result;
     }
 }

@@ -1,5 +1,6 @@
 package com.longlin.novel.entity;
 
+import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -14,8 +15,11 @@ import lombok.EqualsAndHashCode;
 @Data
 public class Person extends BaseEntity{
     private String id;
+    @NotNull(message = "M1001")
     private String personName;
+    @NotNull
     private String age;
+    @NotNull(message = "M1001")
     private String personAttribute;
     private String personDescription;
     private int deleted;

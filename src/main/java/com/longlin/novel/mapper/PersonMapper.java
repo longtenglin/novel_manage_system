@@ -59,7 +59,7 @@ public interface PersonMapper extends IService<Person> {
     @Update("UPDATE person" +
             "   SET deleted = 1 " +
             "WHERE id = #{id}")
-    void deletedPersonFalse(JSONObject params);
+    int deletedPersonFalse(String id);
 
     @Delete("DELETE person WHERE id = #{id}")
     void deletedPerson(JSONObject params);

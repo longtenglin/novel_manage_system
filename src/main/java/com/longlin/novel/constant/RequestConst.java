@@ -7,6 +7,8 @@ package com.longlin.novel.constant;
  * @Version: 1.0.0
  */
 public interface RequestConst {
+    public static final String PAGE_SIZE = "pageSize";
+    public static final String CURRENT = "current";
     public static final String ID = "id";
     public static final String NOVEL_NAME = "novelName";
     public static final String NOVEL_TYPE = "novelType";
@@ -18,4 +20,9 @@ public interface RequestConst {
     public static final String UPDATE_TIME = "updateTime";
     public static final String UPDATER = "updater";
     public static final String DELETED = "deleted";
+    public static final String PERSON_NAME = "personName";
+    public static final String AGE = "age";
+    public static final String PERSON_ATTRIBUTE = "personAttribute";
+    public static final String PERSON_DESCRIPTION = "personDescription";
+
 }

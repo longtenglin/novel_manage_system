@@ -1,6 +1,7 @@
 package com.longlin.novel.service.impl;
 
 import com.alibaba.fastjson.JSONObject;
+import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.longlin.novel.entity.Person;
 import com.longlin.novel.mapper.PersonMapper;
 import com.longlin.novel.service.IPersonService;
@@ -21,7 +22,7 @@ import java.util.List;
 public class PersonServiceImpl implements IPersonService {
 
     @Autowired
-    PersonMapper personMapper;
+    private PersonMapper personMapper;
 
     @Override
     public JSONObject getPersonList(JSONObject params) throws Exception {
@@ -45,9 +46,42 @@ public class PersonServiceImpl implements IPersonService {
             result.put("dataSource", personList);
 
             log.info(this.getClass().getName()+" - 人物信息获取业务处理结束");
-            return ResponseUtils.setResponseMessage(result);
+            return result;
         }catch (Exception e){
             throw new Exception(e);
         }
     }
+
+    @Override
+    public boolean save(Person person) throws Exception {
+        log.info(this.getClass().getName() + " - 人物信息添加业务处理开始");
+        boolean success = personMapper.save(person);
+        log.info(this.getClass().getName() + " - 人物信息添加业务处理结束");
+        return success;
+    }
+
+    @Override
+    public boolean update(Person person) throws Exception {
+        log.info(this.getClass().getName() + " - 人物信息更新业务处理开始");
+        boolean success = personMapper.updateById(person);
+        log.info(this.getClass().getName() + " - 人物信息更新业务处理结束");
+        return success;
+    }
+
+    @Override
+    public boolean delete(String id) throws Exception {
+        log.info(this.getClass().getName() + " - 人物信息删除业务处理开始");
+        boolean success = personMapper.removeById(id);
+        log.info(this.getClass().getName() + " - 人物信息删除业务处理结束");
+        return success;
+    }
+
+    @Override
+    public boolean deleteFalse(String id) throws Exception {
+        log.info(this.getClass().getName() + " - 人物信息更新业务处理开始");
+        int count = personMapper.deletedPersonFalse(id);
+        log.info(this.getClass().getName() + " - 人物信息更新业务处理结束");
+        return count == 1;
+    }
+
 }

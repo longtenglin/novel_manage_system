@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.longlin.novel.constant.RequestConst;
 import com.longlin.novel.constant.ResponseConst;
+import com.longlin.novel.data.DataConst;
 import com.longlin.novel.entity.Novel;
 import com.longlin.novel.service.INovelService;
 import com.longlin.novel.utils.ResponseCode;
@@ -21,8 +22,7 @@ import static org.hamcrest.Matchers.containsString;
 import static org.mockito.ArgumentMatchers.*;
 import static org.mockito.Mockito.when;
 import static org.springframework.restdocs.mockmvc.MockMvcRestDocumentation.document;
-import static org.springframework.restdocs.mockmvc.RestDocumentationRequestBuilders.get;
-import static org.springframework.restdocs.mockmvc.RestDocumentationRequestBuilders.post;
+import static org.springframework.restdocs.mockmvc.RestDocumentationRequestBuilders.*;
 import static org.springframework.restdocs.payload.PayloadDocumentation.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
@@ -87,19 +87,14 @@ public class NovelControllerTest {
     @Test
     public void saveTest() throws Exception {
         Map<String, Object> params = new HashMap<>();
-        params.put(RequestConst.ID, "LTLN0000001");
         params.put(RequestConst.NOVEL_NAME, "Mockmvc Test");
         params.put(RequestConst.NOVEL_TYPE, "Mockmvc Test");
         params.put(RequestConst.NOVEL_AUTHOR, "Mockmvc Test");
         params.put(RequestConst.NOVEL_PUB_DATE, new Date());
         params.put(RequestConst.NOVEL_DESCRIPTION, "Mockmvc Test");
-        params.put(RequestConst.CREATE_TIME, new Date());
-        params.put(RequestConst.CREATOR, "SYS");
-        params.put(RequestConst.UPDATE_TIME, new Date());
-        params.put(RequestConst.UPDATER, "SYS");
-        params.put(RequestConst.DELETED, 0);
 
-        when(iNovelService.save(any())).thenReturn(1);
+        when(iNovelService.save(any())).thenReturn(new JSONObject() {{put("count", 1);}});
+
         this.mockMvc
                 .perform(post("/web/novel/save")
                         .contentType(MediaType.APPLICATION_JSON)
@@ -112,13 +107,66 @@ public class NovelControllerTest {
                                 fieldWithPath(RequestConst.NOVEL_NAME).description("小说名称"),
                                 fieldWithPath(RequestConst.NOVEL_TYPE).description("小说类型"),
                                 fieldWithPath(RequestConst.NOVEL_AUTHOR).description("小说的作者"),
-                                fieldWithPath(RequestConst.NOVEL_PUB_DATE).description("小说的发布日期"),
-                                fieldWithPath(RequestConst.NOVEL_DESCRIPTION).description("小说描述")
+                                fieldWithPath(RequestConst.NOVEL_PUB_DATE).optional().description("(可选) 小说的发布日期"),
+                                fieldWithPath(RequestConst.NOVEL_DESCRIPTION).optional().description("(可选) 小说描述")
                         ),
                         responseFields(
                                 fieldWithPath(ResponseConst.CODE).description("响应代码"),
                                 fieldWithPath(ResponseConst.MESSAGE).description("响应消息"),
-                                fieldWithPath(ResponseConst.RESULT).description("响应内容")
+                                fieldWithPath(ResponseConst.RESULT).description("详细信息"),
+                                subsectionWithPath(ResponseConst.RESULT_COUNT).description("更新成功的数据数目")
+                        )));
+    }
+
+    @Test
+    public void updateTest() throws Exception {
+        when(iNovelService.update(any())).thenReturn(new JSONObject() {{put("count", 1);}});
+
+        this.mockMvc.perform(post("/web/novel/update")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(DataConst.UPDATE_NOVEL)))
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString(ResponseCode.E0000)))
+                .andDo(document("novel/update",
+                        requestFields(
+                                fieldWithPath(RequestConst.ID).description("小说的ID，小说的唯一标识符"),
+                                fieldWithPath(RequestConst.NOVEL_NAME).description("小说名称"),
+                                fieldWithPath(RequestConst.NOVEL_TYPE).description("小说类型"),
+                                fieldWithPath(RequestConst.NOVEL_AUTHOR).description("小说的作者"),
+                                fieldWithPath(RequestConst.NOVEL_PUB_DATE).optional().description("(可选) 小说的发布日期"),
+                                fieldWithPath(RequestConst.NOVEL_DESCRIPTION).optional().description("(可选) 小说描述")
+                        ),
+                        responseFields(
+                                fieldWithPath(ResponseConst.CODE).description("响应代码"),
+                                fieldWithPath(ResponseConst.MESSAGE).description("响应消息"),
+                                fieldWithPath(ResponseConst.RESULT).description("详细信息"),
+                                subsectionWithPath(ResponseConst.RESULT_COUNT).description("更新成功的数据数目")
+                        )));
+    }
+
+    @Test
+    public void deleteFalse() throws Exception {
+        JSONObject params = new JSONObject() {{
+            put(RequestConst.ID, "LTLN0000001");
+        }};
+        when(iNovelService.deleteFalse(any())).thenReturn(new JSONObject() {{put("count", 1);}});
+
+        this.mockMvc.perform(delete("/web/novel/delete")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(params)))
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString(ResponseCode.E0000)))
+                .andDo(document("novel/delete",
+                        requestFields(
+                                fieldWithPath(RequestConst.ID).description("小说的ID，小说的唯一标识符")
+                        ),
+                        responseFields(
+                                fieldWithPath(ResponseConst.CODE).description("响应代码"),
+                                fieldWithPath(ResponseConst.MESSAGE).description("响应消息"),
+                                fieldWithPath(ResponseConst.RESULT).description("详细信息"),
+                                subsectionWithPath(ResponseConst.RESULT_COUNT).description("更新成功的数据数目")
                         )));
     }
 }
