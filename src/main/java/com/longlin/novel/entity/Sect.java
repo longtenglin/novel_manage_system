@@ -9,7 +9,8 @@ import lombok.Data;
  * @Version: 1.0
  */
 @Data
-public class Sect {
+public class Sect extends BaseEntity{
+    String id;
     public String sectName;
     public String sectType;
     public String sectAttribute;

@@ -10,7 +10,8 @@ import lombok.Data;
  */
 
 @Data
-public class Treasure {
+public class Treasure extends BaseEntity{
+    String id;
     String treasureName;
     String treasureType;
     String treasureAttribute;

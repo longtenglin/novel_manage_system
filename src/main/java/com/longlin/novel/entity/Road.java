@@ -10,7 +10,8 @@ import lombok.Data;
  */
 
 @Data
-public class Road {
+public class Road extends BaseEntity{
+    String id;
     String roadName;
     String roadType;
     String roadAttribute;

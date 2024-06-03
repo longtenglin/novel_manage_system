@@ -10,7 +10,8 @@ import lombok.Data;
  */
 
 @Data
-public class Weapons {
+public class Weapons extends BaseEntity{
+    String id;
     String weaponsName;
     String weaponsType;
     String weaponsAttribute;

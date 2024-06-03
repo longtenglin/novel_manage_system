@@ -9,7 +9,8 @@ import lombok.Data;
  * @Version: 1.0
  */
 @Data
-public class Skill {
+public class Skill extends BaseEntity{
+    String id;
     String skillName;
     String skillType;
     String skillAttribute;
